@@ -5,30 +5,33 @@ It can be modified in color, size, and type, and can optionally display an icon.
 
 ## Getting Started
 
-- Install with [npmjs](https://www.npmjs.com): 
-  - `npm install terra-button` 
-  - `yarn install terra-button` 
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-button`
+  - `yarn install terra-button`
 - [Download the latest version](https://github.com/cerner/terra-button/archive/master.zip)
 - Clone the repo: `git clone https://github.com/cerner/terra-button.git`
 - Run the project with: `npm run start`
 
 ## Usage
 
-Add the class `terra-Button` to the `button`, `input[type="button"]`, `input[type="submit"]`, or `input[type="reset"]` elements.
-There are additional modifier classes for button color, size, and style.
+```js
+import Button from 'terra-button';
+
+<Button text="Default" />
+```
 
 ## React Props
 
-| Prop            | Default   | Default   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|-----------------|-----------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `attributes`    | Object    |           | Additional information to be merged into the button container. ( className, style, data etc.. )                                                                                                                                                                                                                                                                                                                                                                                  |
-| `icon`          | Element   |           | An optional icon. Nested inline with the text when provided                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `intent`        | String    | `default` | Sets the button color scheme. One of `primary`, `secondary`, `positive`, `negative`, `warning`, `info`                                                                                                                                                                                                                                                                                                                                                                           |
-| `isBlock`       | Boolean   | false     | Whether or not the button should display as a block                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `isDisabled`    | Boolean   | false     | Whether or not the button should be disabled                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `isReversed`    | Boolean   | false     | Reverses the position of the icon and text                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `href`          | String    |           | Sets the href. When set will render the component as an anchor tag                                                                                                                                                                                                                                                                                                                                                                                                               |
-| `onClick`       | Function  |           | Callback function triggered when clicked                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| `size`          | String    |           | Sets the button size. One of `tiny`, `small`, `medium`, `large`, `huge`                                                                                                                                                                                                                                                                                                                                                                                                          |
-| `text`          | String    |           | Sets the button text                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| `variant`       | String    |           | Sets the button variant. One of `link` or `outline`                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Prop         | Type     | Default   | Description |
+|--------------|----------|-----------|-------------|
+| `attributes` | Object   |           | Additional information to be merged into the button container. ( className, style, data etc..). |
+| `icon`       | Element  |           | Displays icon passed in via the prop within the <Button /> component. |
+| `intent`     | String   | `default` | Sets the button color scheme. One of `default`, `primary`, `secondary`, `positive`, `negative`, `warning`, `info`. |
+| `isBlock`    | Boolean  | false     | Adjusts the width and display of the button to make it span the full width of the parent. |
+| `isDisabled` | Boolean  | false     | Whether or not the button should be disabled. |
+| `isReversed` | Boolean  | false     | Reverses the default position of the icon and text. |
+| `href`       | String   |           | When set will render the component as an anchor tag. Will set href attribute on anchor tag. |
+| `onClick`    | Function |           | Callback function triggered when clicked. |
+| `size`       | String   |           | Sets the button size. One of `tiny`, `small`, `medium`, `large`, `huge`. |
+| `text`       | String   |           | Sets the button text |
+| `variant`    | String   |           | Sets the button variant. One of `link` or `outline`. |
