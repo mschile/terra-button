@@ -1,17 +1,16 @@
-### Block Buttons
-Block buttons expand to fill the width of their parent element and will not share the same horizontal space as other elements.
+### Block Button
 
-| Class Name            | Behavior                                                                                     |
-|-----------------------|----------------------------------------------------------------------------------------------|
-| `terra-Button--block` | Adjusts the `width` and `display` of the button to make it span the full width of the parent |
+Buttons can be styled to expand and fill the width of their parent element by using the `isBlock` prop on the `<Button />` component.
 
-### React Block Buttons
-| Prop            | Default   | Default   | Description                                                          |
-|-----------------|-----------|-----------|----------------------------------------------------------------------|
-| `isBlock`       | Boolean   | false     | Whether or not the Button should display as a block component        |
+### Usage
 
-### React Usage
+```js
+import Button from 'terra-button';
 
+<Button isBlock />
 ```
-<Button block />
-```
+
+### Prop Details
+| Prop      | Type    | Default | Description |
+|-----------|---------|---------|-------------|
+| `isBlock` | Boolean | false   | Adjusts the `width` and `display` of the button to make it span the full width of the parent. |
