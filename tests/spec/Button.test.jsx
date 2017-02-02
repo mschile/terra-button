@@ -1,6 +1,6 @@
 import React from 'react';
 import initStoryshots from 'storyshots';
-import Button from '../src/Button';
+import Button from '../../src/Button';
 
 // Run snapshot tests for react-storybook
 initStoryshots();

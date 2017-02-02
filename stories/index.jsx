@@ -1,6 +1,25 @@
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+import { storiesOf, addDecorator } from '@kadira/storybook';
+import '@kadira/storybook-addon-knobs';
+import { setOptions } from '@kadira/storybook-addon-options';
+import { checkA11y } from 'storybook-addon-a11y';
+import 'storybook-addon-i18n-tools';
+
 import Button from '../src/Button';
+
+setOptions({
+  name: 'Button',
+  url: 'https://github.com/cerner/terra-button',
+  goFullScreen: false,
+  showLeftPanel: true,
+  showDownPanel: true,
+  showSearchBox: false,
+  downPanelInRight: false,
+  sortStoriesByKind: false,
+});
+
+addDecorator(checkA11y);
 
 storiesOf('Size', module)
   .add('Default', () => (
@@ -98,6 +117,7 @@ storiesOf('Block', module)
 
 storiesOf('onClick', module)
   .add('Alert onClick', () => (
+    // eslint-disable-next-line no-alert
     <Button text="Click Me" onClick={() => alert("I've been clicked!")} />
   ));
 
