@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import '../src/terra-button.scss';
+import '../src/button.scss';
 
 const Button = (props) => {
   const attributes = Object.assign({}, props.attributes);
