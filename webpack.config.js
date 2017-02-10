@@ -1,6 +1,6 @@
 // By default eslint assumes packages imported are supposed to be dependencies,
 // not devDependencies. Disabling this rule in webpack.conig.js
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
+/* eslint-disable import/no-extraneous-dependencies */
 
 const path = require('path');
 const autoprefixer = require('autoprefixer');
@@ -9,7 +9,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    'terra-button': path.join(__dirname, 'demos', 'demo'),
+    examples: path.join(__dirname, 'examples', 'index'),
+    tests: path.join(__dirname, 'tests/visuals', 'index'),
   },
   module: {
     loaders: [
@@ -19,22 +20,30 @@ module.exports = {
         loader: 'babel',
       },
       {
+        test: /\.json$/,
+        loader: 'json-loader',
+      },
+      {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style', 'css!postcss!sass'),
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('css-loader'),
+      },
+      {
+        test: /\.md$/,
+        loader: 'raw-loader',
       },
     ],
   },
   sassLoader: {
-    data: `@import "${path.resolve('node_modules/terra-legacy-theme/src/terra-legacy-theme.scss')}";`,
-  },
-  output: {
-    filename: '[name].js',
-    path: path.join(__dirname, 'dist'),
+    data: `@import "${path.resolve('node_modules/terra-legacy-theme/src/terra-legacy-theme.scss')}"; @import "${path.resolve('node_modules/terra-application/src/terra-application.scss')}"; $terra-bidi: true;`,
   },
   plugins: [
     new ExtractTextPlugin('[name].css'),
     new HtmlWebpackPlugin({
-      template: 'demos/demo.html',
+      template: 'examples/index.html',
     }),
   ],
   postcss: [
@@ -49,6 +58,6 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['', '.webpack.js', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx'],
   },
 };
