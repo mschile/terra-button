@@ -9,6 +9,7 @@ Cerner Corporation
 - Aaron S. McRuer [@Nerdenator]
 - Stephen Esser [@StephenEsser]
 - Matt Henkes [@mjhenkes]
+- Matt Schile [@mschile]
 
 
 [@bjankord]: https://github.com/bjankord
@@ -20,3 +21,4 @@ Cerner Corporation
 [@Nerdenator]:https://github.com/nerdenator
 [@StephenEsser]:https://github.com/StephenEsser
 [@mjhenkes]:https://github.com/mjhenkes
+[@mschile]:https://github.com/mschile
